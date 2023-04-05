@@ -1,0 +1,157 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Custom properties */
+
+body {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+section {
+  background: linear-gradient(#7b8dca, #6dbbdf);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.containers {
+  border-radius: 50px;
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  transition: border-radius 0.3s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.profile {
+  background-image: url("Profile-Free-Icon.png");
+  background-repeat: no-repeat;
+  background-size: 115%;
+  background-position: center 2px;
+}
+
+.effect {
+  width: 0px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: -55%;
+  border-radius: 20px;
+  transition: width 0.15s, height 0.35s;
+}
+
+.effect-active {
+  height: 30px;
+  width: 8px;
+}
+
+.containers p {
+  font-size: 1.6rem;
+}
+
+.help-text {
+  position: absolute;
+  right: -150%;
+  color: #6dbbdf;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.15s;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.containers:hover .help-text {
+  display: flex;
+  opacity: 1;
+}
+
+.help-effect {
+  background-color: white;
+  position: absolute;
+  left: -5%;
+  top: 35%;
+  min-width: 15px;
+  min-height: 15px;
+  rotate: 45deg;
+  transform: translateZ(-10px);
+}
+
+.container-active {
+  border-radius: 20px;
+}
+
+.clicked {
+  background: linear-gradient(to left, #6dbbdf, #7b8dca);
+  color: white;
+}
